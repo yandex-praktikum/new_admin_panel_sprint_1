@@ -8,10 +8,14 @@ authors = ["Mikhail <golobokov.misha@gmail.com>"]
 python = "^3.10"
 Django = "3.2"
 psycopg2-binary = "^2.9.3"
+python-dotenv = "^0.20.0"
+django-split-settings = "^1.1.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "4.0"
 Faker = "^13.14.0"
+pre-commit = "^2.19.0"
+django-debug-toolbar = "^3.5.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
