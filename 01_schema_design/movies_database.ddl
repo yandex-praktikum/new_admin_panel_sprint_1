@@ -38,3 +38,21 @@ CREATE TABLE IF NOT EXISTS content.person_film_work
 
 CREATE UNIQUE INDEX film_work_person_idx
     ON content.person_film_work (film_work_id, person_id);
+
+
+CREATE TABLE IF NOT EXISTS content.genre
+(
+    id          uuid PRIMARY KEY,
+    name        TEXT NOT NULL,
+    description TEXT NOT NULL,
+    created     timestamp with time zone,
+    modified    timestamp with time zone
+);
+
+CREATE TABLE IF NOT EXISTS content.genre_film_work
+(
+    id           uuid PRIMARY KEY,
+    film_work_id uuid NOT NULL,
+    genre_id     uuid NOT NULL,
+    created      timestamp with time zone
+);
