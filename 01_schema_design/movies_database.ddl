@@ -9,6 +9,8 @@ CREATE TABLE IF NOT EXISTS content.film_work
     creation_date DATE,
     rating        FLOAT,
     type          TEXT NOT NULL,
+    certificate   varchar(512),
+    file_path     varchar(100),
     created       timestamp with time zone,
     modified      timestamp with time zone
 );
@@ -37,7 +39,7 @@ CREATE TABLE IF NOT EXISTS content.person_film_work
 );
 
 CREATE UNIQUE INDEX film_work_person_idx
-    ON content.person_film_work (film_work_id, person_id);
+    ON content.person_film_work (film_work_id, person_id, role);
 
 
 CREATE TABLE IF NOT EXISTS content.genre
