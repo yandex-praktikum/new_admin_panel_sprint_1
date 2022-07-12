@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from typing import Optional, Any
 
 import psycopg2.extensions as psycopg2_extensions
+from dateutil.parser import parse
 
 
 @contextmanager
@@ -26,5 +27,12 @@ class PipelineElement:
     skip_empty_fields: Optional[list] = None
 
 
+def convert_timestamp(raw_datetime: str):
+    return parse(raw_datetime)
+
+
 ConnectionSqlite = sqlite3.Connection
 ConnectionPsycopg = psycopg2_extensions.connection
+
+sqlite3.register_converter("timestamp", convert_timestamp)
+sqlite3.register_converter("timestam", convert_timestamp)
