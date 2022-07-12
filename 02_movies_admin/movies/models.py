@@ -121,6 +121,9 @@ class GenreFilmwork(UUIDMixin):
         verbose_name = _('verbose_name_genre_film_work')
         verbose_name_plural = _('verbose_name_plural_genre_film_work')
 
+    def __str__(self):
+        return ""
+
 
 class Person(UUIDMixin, TimeStampedMixin):
     full_name = models.TextField(_('full_name'))
@@ -157,3 +160,6 @@ class PersonFilmwork(UUIDMixin):
         db_table = "content\".\"person_film_work"
         verbose_name = _('verbose_name_person_film_work')
         verbose_name_plural = _('verbose_name_plural_person_film_work')
+
+    def __str__(self):
+        return ""
