@@ -1,4 +1,3 @@
-import os
 import sqlite3
 
 import dotenv
@@ -15,7 +14,7 @@ from models import (
     PersonFilmwork,
     Person
 )
-from utils import PipelineElement, sqlite_conn_context
+from utils import PipelineElement, sqlite_conn_context, load_db_envs
 
 rename_created_at = {'created_at': 'created'}
 rename_updated_at = {'updated_at': 'modified'}
@@ -75,11 +74,13 @@ def load_from_sqlite(
     iterator = Iterator(connection=connection)
 
     for p in pipeline:
+        query = f"SELECT * FROM {p.table};"
         # create data generator with chunks
         iterable_table = iter_table_chunked(
             p=p,
             iterator=iterator,
-            chunk_size=chunk_size
+            chunk_size=chunk_size,
+            query=query
         )
 
         for i in iterable_table:
@@ -93,13 +94,7 @@ def load_from_sqlite(
 
 if __name__ == '__main__':
     dotenv.load_dotenv()
-    dsl = {
-        'dbname': os.environ.get('DB_NAME'),
-        'user': os.environ.get('DB_USER'),
-        'password': os.environ.get('DB_PASSWORD'),
-        'host': os.environ.get('DB_HOST'),
-        'port': os.environ.get('DB_PORT')
-    }
+    dsl = load_db_envs()
     with sqlite_conn_context('db.sqlite') as sqlite_conn, psycopg2.connect(
             **dsl,
             cursor_factory=DictCursor

@@ -1,4 +1,5 @@
 import collections.abc as collections_abc
+import os
 import sqlite3
 from contextlib import contextmanager
 from dataclasses import dataclass
@@ -25,6 +26,17 @@ class PipelineElement:
     model: Any
     fields_to_rename: Optional[dict] = None
     skip_empty_fields: Optional[list] = None
+
+
+def load_db_envs():
+    envs = {
+        'dbname': os.environ.get('DB_NAME'),
+        'user': os.environ.get('DB_USER'),
+        'password': os.environ.get('DB_PASSWORD'),
+        'host': os.environ.get('DB_HOST'),
+        'port': os.environ.get('DB_PORT')
+    }
+    return envs
 
 
 def convert_timestamp(raw_datetime: str):

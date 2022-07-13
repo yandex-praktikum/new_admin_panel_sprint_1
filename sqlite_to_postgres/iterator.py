@@ -28,11 +28,11 @@ class Iterator:
 
     def make_table_iterable(
             self,
-            table_name: str,
-            fields_to_rename: Dict[str, str]
+            fields_to_rename: Dict[str, str],
+            query: str
     ):
         curs = self.connection.cursor()
-        curs.execute(f"SELECT * FROM {table_name};")
+        curs.execute(query)
 
         field_names = self.get_field_names_from_cursor(
             curs=curs,
@@ -46,11 +46,15 @@ class Iterator:
 def iter_table_chunked(
         p: PipelineElement,
         iterator: Iterator,
+        query: str,
         chunk_size: int = 50
 ):
     elements = []
 
-    for i in iterator.make_table_iterable(p.table, p.fields_to_rename):
+    for i in iterator.make_table_iterable(
+            fields_to_rename=p.fields_to_rename,
+            query=query
+    ):
         if p.skip_empty_fields and set(p.skip_empty_fields) <= set(i.keys()):
             for f in p.skip_empty_fields:
                 del i[f]
