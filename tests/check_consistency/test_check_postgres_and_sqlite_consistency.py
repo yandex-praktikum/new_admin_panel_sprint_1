@@ -3,7 +3,6 @@ import sqlite3
 import psycopg2
 import pytest
 from psycopg2.extras import DictCursor
-import datetime
 from sqlite_to_postgres.models import FilmWork, Genre, GenreFilmWork, Person, PersonFilmWork
 from sqlite_to_postgres.postgres import Postgres
 from sqlite_to_postgres.sqlite import SQLite
