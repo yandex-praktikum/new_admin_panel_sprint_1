@@ -1,0 +1,150 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="48" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="size" />
+            <item index="1" class="java.lang.String" itemvalue="color" />
+            <item index="2" class="java.lang.String" itemvalue="face" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="120">
+            <item index="0" class="java.lang.String" itemvalue="pyodbc" />
+            <item index="1" class="java.lang.String" itemvalue="lz4" />
+            <item index="2" class="java.lang.String" itemvalue="ozdatabase" />
+            <item index="3" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="4" class="java.lang.String" itemvalue="ozlogger" />
+            <item index="5" class="java.lang.String" itemvalue="ozhamcrest" />
+            <item index="6" class="java.lang.String" itemvalue="requests" />
+            <item index="7" class="java.lang.String" itemvalue="ozfaker" />
+            <item index="8" class="java.lang.String" itemvalue="ozrestclient" />
+            <item index="9" class="java.lang.String" itemvalue="lms-handlers-coverage" />
+            <item index="10" class="java.lang.String" itemvalue="lms_qa_admin" />
+            <item index="11" class="java.lang.String" itemvalue="ozmodel" />
+            <item index="12" class="java.lang.String" itemvalue="lms_config" />
+            <item index="13" class="java.lang.String" itemvalue="ozvault" />
+            <item index="14" class="java.lang.String" itemvalue="ls-srt-qa-tools" />
+            <item index="15" class="java.lang.String" itemvalue="ozallureprocessor" />
+            <item index="16" class="java.lang.String" itemvalue="ls-srt-qa-core" />
+            <item index="17" class="java.lang.String" itemvalue="grpc-merlin" />
+            <item index="18" class="java.lang.String" itemvalue="s2s_auth" />
+            <item index="19" class="java.lang.String" itemvalue="ozcoverageprocessor" />
+            <item index="20" class="java.lang.String" itemvalue="SQLAlchemy" />
+            <item index="21" class="java.lang.String" itemvalue="grpcio" />
+            <item index="22" class="java.lang.String" itemvalue="grpcio-tools" />
+            <item index="23" class="java.lang.String" itemvalue="ozdb" />
+            <item index="24" class="java.lang.String" itemvalue="hvac" />
+            <item index="25" class="java.lang.String" itemvalue="protobuf" />
+            <item index="26" class="java.lang.String" itemvalue="stringcase" />
+            <item index="27" class="java.lang.String" itemvalue="tzlocal" />
+            <item index="28" class="java.lang.String" itemvalue="greenlet" />
+            <item index="29" class="java.lang.String" itemvalue="typed-ast" />
+            <item index="30" class="java.lang.String" itemvalue="googleapis-common-protos" />
+            <item index="31" class="java.lang.String" itemvalue="tabulate" />
+            <item index="32" class="java.lang.String" itemvalue="PyYAML" />
+            <item index="33" class="java.lang.String" itemvalue="python-dateutil" />
+            <item index="34" class="java.lang.String" itemvalue="psycopg2-binary" />
+            <item index="35" class="java.lang.String" itemvalue="kombu" />
+            <item index="36" class="java.lang.String" itemvalue="deepdiff" />
+            <item index="37" class="java.lang.String" itemvalue="ls-srt-clients" />
+            <item index="38" class="java.lang.String" itemvalue="raf" />
+            <item index="39" class="java.lang.String" itemvalue="certifi" />
+            <item index="40" class="java.lang.String" itemvalue="lxml" />
+            <item index="41" class="java.lang.String" itemvalue="GeoAlchemy2" />
+            <item index="42" class="java.lang.String" itemvalue="vine" />
+            <item index="43" class="java.lang.String" itemvalue="jsonschema" />
+            <item index="44" class="java.lang.String" itemvalue="email-validator" />
+            <item index="45" class="java.lang.String" itemvalue="dnspython" />
+            <item index="46" class="java.lang.String" itemvalue="PySnooper" />
+            <item index="47" class="java.lang.String" itemvalue="confluent-kafka" />
+            <item index="48" class="java.lang.String" itemvalue="grpclib" />
+            <item index="49" class="java.lang.String" itemvalue="mergedeep" />
+            <item index="50" class="java.lang.String" itemvalue="argcomplete" />
+            <item index="51" class="java.lang.String" itemvalue="krest" />
+            <item index="52" class="java.lang.String" itemvalue="orjson" />
+            <item index="53" class="java.lang.String" itemvalue="clickhouse-driver" />
+            <item index="54" class="java.lang.String" itemvalue="openapi-spec-validator" />
+            <item index="55" class="java.lang.String" itemvalue="types-protobuf" />
+            <item index="56" class="java.lang.String" itemvalue="schema-maker" />
+            <item index="57" class="java.lang.String" itemvalue="mypy-protobuf" />
+            <item index="58" class="java.lang.String" itemvalue="betterproto" />
+            <item index="59" class="java.lang.String" itemvalue="mimir-py" />
+            <item index="60" class="java.lang.String" itemvalue="retrying" />
+            <item index="61" class="java.lang.String" itemvalue="clickhouse-sqlalchemy" />
+            <item index="62" class="java.lang.String" itemvalue="charset-normalizer" />
+            <item index="63" class="java.lang.String" itemvalue="idna" />
+            <item index="64" class="java.lang.String" itemvalue="pathspec" />
+            <item index="65" class="java.lang.String" itemvalue="prance" />
+            <item index="66" class="java.lang.String" itemvalue="genson" />
+            <item index="67" class="java.lang.String" itemvalue="pbgen" />
+            <item index="68" class="java.lang.String" itemvalue="wcwidth" />
+            <item index="69" class="java.lang.String" itemvalue="h2" />
+            <item index="70" class="java.lang.String" itemvalue="pyhcl" />
+            <item index="71" class="java.lang.String" itemvalue="grpcio-reflection" />
+            <item index="72" class="java.lang.String" itemvalue="click-didyoumean" />
+            <item index="73" class="java.lang.String" itemvalue="pyrsistent" />
+            <item index="74" class="java.lang.String" itemvalue="datamodel-code-generator" />
+            <item index="75" class="java.lang.String" itemvalue="sqlalchemy2-stubs" />
+            <item index="76" class="java.lang.String" itemvalue="ozbalance" />
+            <item index="77" class="java.lang.String" itemvalue="structlog" />
+            <item index="78" class="java.lang.String" itemvalue="celery" />
+            <item index="79" class="java.lang.String" itemvalue="freezegun" />
+            <item index="80" class="java.lang.String" itemvalue="ruamel.yaml.clib" />
+            <item index="81" class="java.lang.String" itemvalue="pbreflect" />
+            <item index="82" class="java.lang.String" itemvalue="gr8kafka" />
+            <item index="83" class="java.lang.String" itemvalue="grpcio-status" />
+            <item index="84" class="java.lang.String" itemvalue="prompt-toolkit" />
+            <item index="85" class="java.lang.String" itemvalue="xmltodict" />
+            <item index="86" class="java.lang.String" itemvalue="jsonschema-spec" />
+            <item index="87" class="java.lang.String" itemvalue="urllib3" />
+            <item index="88" class="java.lang.String" itemvalue="dataclass-factory" />
+            <item index="89" class="java.lang.String" itemvalue="sqlmodel" />
+            <item index="90" class="java.lang.String" itemvalue="billiard" />
+            <item index="91" class="java.lang.String" itemvalue="hyperframe" />
+            <item index="92" class="java.lang.String" itemvalue="lms-qa-admin" />
+            <item index="93" class="java.lang.String" itemvalue="ordered-set" />
+            <item index="94" class="java.lang.String" itemvalue="pytest" />
+            <item index="95" class="java.lang.String" itemvalue="amqp" />
+            <item index="96" class="java.lang.String" itemvalue="openapi-schema-validator" />
+            <item index="97" class="java.lang.String" itemvalue="pathable" />
+            <item index="98" class="java.lang.String" itemvalue="ruamel.yaml" />
+            <item index="99" class="java.lang.String" itemvalue="tzdata" />
+            <item index="100" class="java.lang.String" itemvalue="packaging" />
+            <item index="101" class="java.lang.String" itemvalue="sqlacodegen" />
+            <item index="102" class="java.lang.String" itemvalue="hpack" />
+            <item index="103" class="java.lang.String" itemvalue="toml" />
+            <item index="104" class="java.lang.String" itemvalue="pytz-deprecation-shim" />
+            <item index="105" class="java.lang.String" itemvalue="chardet" />
+            <item index="106" class="java.lang.String" itemvalue="grpc-stubs" />
+            <item index="107" class="java.lang.String" itemvalue="lazy-object-proxy" />
+            <item index="108" class="java.lang.String" itemvalue="importlib-resources" />
+            <item index="109" class="java.lang.String" itemvalue="inflect" />
+            <item index="110" class="java.lang.String" itemvalue="multidict" />
+            <item index="111" class="java.lang.String" itemvalue="click-repl" />
+            <item index="112" class="java.lang.String" itemvalue="pytz" />
+            <item index="113" class="java.lang.String" itemvalue="click-plugins" />
+            <item index="114" class="java.lang.String" itemvalue="ujson" />
+            <item index="115" class="java.lang.String" itemvalue="allure-python-commons" />
+            <item index="116" class="java.lang.String" itemvalue="allure-pytest" />
+            <item index="117" class="java.lang.String" itemvalue="Faker" />
+            <item index="118" class="java.lang.String" itemvalue="grpcio_tools-1.48.2-cp37-cp37m-musllinux_1_1_x86_64.whl" />
+            <item index="119" class="java.lang.String" itemvalue="grpcio-1.51.1-cp37-cp37m-musllinux_1_1_x86_64.whl" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
