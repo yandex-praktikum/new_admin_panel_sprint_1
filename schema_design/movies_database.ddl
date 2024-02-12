@@ -28,7 +28,8 @@ CREATE TABLE IF NOT EXISTS content.genre_film_work (
     film_work_id uuid,
     created timestamp with time zone,
     FOREIGN KEY (genre_id) REFERENCES content.genre (id) ON DELETE CASCADE,
-    FOREIGN KEY (film_work_id) REFERENCES content.film_work (id) ON DELETE CASCADE
+    FOREIGN KEY (film_work_id) REFERENCES content.film_work (id) ON DELETE CASCADE,
+    CONSTRAINT genre_film_work_id UNIQUE (genre_id, film_work_id)
 );
 
 

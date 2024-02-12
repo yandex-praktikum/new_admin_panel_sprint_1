@@ -76,6 +76,7 @@ class GenreFilmWork(UUIDMixin):
 
     class Meta:
         db_table = "content\".\"genre_film_work"
+        unique_together = ['film_work', 'genre']
 
 
 class PersonFilmWork(UUIDMixin):
@@ -86,3 +87,4 @@ class PersonFilmWork(UUIDMixin):
 
     class Meta:
         db_table = "content\".\"person_film_work"
+        unique_together = ['film_work', 'person', 'role']
