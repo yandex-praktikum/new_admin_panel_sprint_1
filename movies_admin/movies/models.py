@@ -30,7 +30,7 @@ class UUIDMixin(models.Model):
 class Genre(UUIDMixin, TimeStampedMixin):
     """ Модель с жанрами для кинокартин."""
     name = models.CharField(_('name'), max_length=255)
-    description = models.TextField(_('description'), blank=True)
+    description = models.TextField(_('description'), blank=True, null=True)
 
     class Meta:
         db_table = "content\".\"genre"
@@ -44,24 +44,26 @@ class Genre(UUIDMixin, TimeStampedMixin):
 class Filmwork(UUIDMixin, TimeStampedMixin):
     """ Модель кинокартин."""
     class TypeChoices(models.TextChoices):
-        MOVIE = 'MO', _('movie')
-        TV_SHOW = 'TV', _('tv show')
+        MOVIE = 'movie', _('movie')
+        TV_SHOW = 'tv show', _('tv show')
 
     title = models.CharField(_('title'), max_length=255,
                              null=False)
-    description = models.TextField(_('description'), blank=False)
-    premiere_date = models.DateField(_('premiere date'), blank=False)
+    description = models.TextField(_('description'), blank=False, null=True)
+    premiere_date = models.DateField(_('premiere date'), blank=True,
+                                     null=True)
     type = models.CharField(
         _('type'),
         null=False,
-        max_length=2,
+        max_length=10,
         choices=TypeChoices.choices,
         default=TypeChoices.MOVIE
         )
     rating = models.FloatField(_('rating'), blank=True,
                                validators=[MinValueValidator(0),
-                                           MaxValueValidator(100)])
-
+                                           MaxValueValidator(100)], null=True)
+    file_path = models.CharField(_('file path'), max_length=255, blank=True,
+                                 null=True)
     genres = models.ManyToManyField(Genre, through='GenreFilmwork')
 
     class Meta:
@@ -81,6 +83,8 @@ class GenreFilmwork(UUIDMixin):
 
     class Meta:
         db_table = "content\".\"genre_film_work"
+        verbose_name = 'Жанры'
+        verbose_name_plural = 'Жанры'
 
 
 class Person(UUIDMixin, TimeStampedMixin):
@@ -105,5 +109,10 @@ class PersonFilmwork(UUIDMixin):
     """ Модель связывает персону с кинопроизведением"""
     film_work = models.ForeignKey('Filmwork', on_delete=models.CASCADE)
     person = models.ForeignKey('Person', on_delete=models.CASCADE)
-    role = models.TextField(_('role'), null=True)
+    role = models.CharField(_('role'), max_length=20, null=True)
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "content\".\"person_film_work"
+        verbose_name = 'Учасники'
+        verbose_name_plural = 'Учасники'

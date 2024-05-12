@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-10 14:46+0000\n"
+"POT-Creation-Date: 2024-05-11 21:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: movies/apps.py:6
+#: movies/apps.py:8
 msgid "movies"
 msgstr "movies"
 
-#: movies/models.py:26
+#: movies/models.py:32
 msgid "name"
 msgstr "name"
 
-#: movies/models.py:28 movies/models.py:51
+#: movies/models.py:33 movies/models.py:52
 msgid "description"
 msgstr "description"
 
-#: movies/models.py:44
+#: movies/models.py:47
 msgid "movie"
 msgstr "movie"
 
-#: movies/models.py:45
+#: movies/models.py:48
 msgid "tv show"
 msgstr "tv show"
 
-#: movies/models.py:48
+#: movies/models.py:50
 msgid "title"
 msgstr "title"
 
@@ -46,30 +46,34 @@ msgstr "title"
 msgid "premiere date"
 msgstr "premiere date"
 
-#: movies/models.py:56
+#: movies/models.py:55
 msgid "type"
 msgstr "type"
 
-#: movies/models.py:63
+#: movies/models.py:61
 msgid "rating"
 msgstr "rating"
 
-#: movies/models.py:92
+#: movies/models.py:64
+msgid "file path"
+msgstr "file path"
+
+#: movies/models.py:90
 msgid "male"
 msgstr "male"
 
-#: movies/models.py:93
+#: movies/models.py:91
 msgid "female"
 msgstr "female"
 
-#: movies/models.py:95
+#: movies/models.py:93
 msgid "full name"
 msgstr "full name"
 
-#: movies/models.py:96
+#: movies/models.py:94
 msgid "gender"
 msgstr "gender"
 
-#: movies/models.py:116
+#: movies/models.py:109
 msgid "role"
 msgstr "role"
