@@ -1,15 +1,18 @@
 import sqlite3
 import uuid
+import datetime
 
 from dataclasses import dataclass, field
-from datetime import datetime
+from contextlib import contextmanager
+
+datenow = datetime.datetime.now(tz=datetime.timezone.utc)
 
 
 @dataclass
 class Genre:
     name: str
-    created_at: datetime
-    updated_at: datetime
+    created_at: datetime = field(default=datenow)
+    updated_at: datetime = field(default=datenow)
     description: str = field(default=None)
     id: uuid.UUID = field(default_factory=uuid.uuid4)
 
@@ -18,8 +21,8 @@ class Genre:
 class Film_work:
     title: str
     type: str
-    created_at: datetime
-    updated_at: datetime
+    created_at: datetime = field(default=datenow)
+    updated_at: datetime = field(default=datenow)
     id: uuid.UUID = field(default_factory=uuid.uuid4)
     description: str = field(default=None)
     creation_date: datetime = field(default=None)
@@ -30,14 +33,14 @@ class Film_work:
 @dataclass
 class Person:
     full_name: str
-    created_at: datetime
-    updated_at: datetime
+    created_at: datetime = field(default=datenow)
+    updated_at: datetime = field(default=datenow)
     id: uuid.UUID = field(default_factory=uuid.uuid4)
 
 
 @dataclass
 class Genre_film_work:
-    created_at: datetime
+    created_at: datetime = field(default=datenow)
     id: uuid.UUID = field(default_factory=uuid.uuid4)
     film_work_id: uuid.UUID = field(default_factory=uuid.uuid4)
     genre_id: uuid.UUID = field(default_factory=uuid.uuid4)
@@ -46,29 +49,36 @@ class Genre_film_work:
 @dataclass
 class Person_film_work:
     role: str
-    created_at: datetime
+    created_at: datetime = field(default=datenow)
     id: uuid.UUID = field(default_factory=uuid.uuid4)
     film_work_id: uuid.UUID = field(default_factory=uuid.uuid4)
     person_id: uuid.UUID = field(default_factory=uuid.uuid4)
+
+
+@contextmanager
+def conn_context(db_path: str):
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    try:
+        yield conn
+    finally:
+        conn.close()
 
 
 class SQLiteExtractor():
 
     def __init__(self, connection: sqlite3.Connection) -> None:
         self.sl_conn = connection
-        self.lines = 50
+        self.lines = 10
 
-    def extract_movies(self) -> dict:
+    def extract_movies(self):
         tables = ['genre', 'film_work', 'person', 'genre_film_work',
                   'person_film_work']
 
         for table in tables:
-            # if table != 'person_film_work':
-            #     continue
             curs = self.sl_conn.cursor()
             curs.execute(f"SELECT * FROM {table};")
             data = curs.fetchall()
-            # print(dict(data[0]))
 
             if table == 'genre':
                 load_genre = [Genre(**dict(_)) for _ in data]

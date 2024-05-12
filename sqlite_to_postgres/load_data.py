@@ -1,38 +1,34 @@
+import os
 import sqlite3
 
 import psycopg2
 from psycopg2.extensions import connection as _connection
 from psycopg2.extras import DictCursor
-from read_data import SQLiteExtractor
+from read_data import SQLiteExtractor, conn_context
 from write_data import PostgresSaver
-from contextlib import contextmanager
+from dotenv import load_dotenv
 
-
-@contextmanager
-def conn_context(db_path: str):
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
-    try:
-        yield conn
-    finally:
-        conn.close()
+load_dotenv()
 
 
 def load_from_sqlite(connection: sqlite3.Connection, pg_conn: _connection):
     """Основной метод загрузки данных из SQLite в Postgres"""
-    # postgres_saver = PostgresSaver(pg_conn)
+    postgres_saver = PostgresSaver(pg_conn)
     sqlite_extractor = SQLiteExtractor(connection)
-
-    data = sqlite_extractor.extract_movies()
-    for _ in data:    
-        print(_.get('table'))
-        print(_.get('data'))
-
-    # postgres_saver.save_all_data(data)
+    postgres_saver.save_data(sqlite_extractor.extract_movies())
 
 
 if __name__ == '__main__':
-    dsl = {'dbname': 'movies_database', 'user': 'app', 'password': '123qwe',
-           'host': '127.0.0.1', 'port': 5432}
-    with conn_context('db.sqlite') as sqlite_conn, psycopg2.connect(**dsl, cursor_factory=DictCursor) as pg_conn:
-        load_from_sqlite(sqlite_conn, pg_conn)
+    dsl = {
+        'dbname': os.environ.get('DB_NAME', 'movies_database'),
+        'user': os.environ.get('DB_USER', 'app'),
+        'password': os.environ.get('DB_PASSWORD', '123qwe'),
+        'host': os.environ.get('DB_HOST', '127.0.0.1'),
+        'port': int(os.environ.get('DB_PORT', '5432'))
+    }
+
+    try:
+        with conn_context('db.sqlite') as sqlite_conn, psycopg2.connect(**dsl, cursor_factory=DictCursor) as pg_conn:
+            load_from_sqlite(sqlite_conn, pg_conn)
+    except Exception as e:
+        print(f"ERROR: {str(e)}")
