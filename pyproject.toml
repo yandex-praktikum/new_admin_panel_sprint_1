@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "admin-panel"
+version = "0.0.1.dev"
+description = "Admin panel for filmwork"
+authors = ["matiushina-anna <digit1991@yandex.ru>"]
+
+[tool.black]
+line-length = 100
+target-version = ["py37", "py38", "py39", "py310"]
+exclude = "env"
+
+[tool.isort]
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+combine_as_imports = true
+# "default_section" and "known_first_party":
+# hack for isort to be working in isolation
+# (without all packages installed)
+default_section = "THIRDPARTY"

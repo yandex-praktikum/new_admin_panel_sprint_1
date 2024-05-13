@@ -1,0 +1,18 @@
+default_language_version:
+  python: python3.10
+repos:
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        additional_dependencies: [ toml ]
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+        entry: black --target-version py310
+        additional_dependencies: [ click>=8.0.0 ]
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
