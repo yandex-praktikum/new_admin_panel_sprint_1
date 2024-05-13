@@ -2,10 +2,11 @@ import os
 import sqlite3
 
 import psycopg2
+from dotenv import load_dotenv
 from psycopg2.extensions import connection as _connection
 from psycopg2.extras import DictCursor
-from works import Postgres, SQLite, test_data, conn_context, renames_tables
-from dotenv import load_dotenv
+
+from works import Postgres, SQLite, conn_context, renames_tables, test_data
 
 load_dotenv()
 

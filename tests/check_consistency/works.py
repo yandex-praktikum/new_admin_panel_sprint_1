@@ -1,8 +1,8 @@
 import sqlite3
-from psycopg2.extensions import connection as _connection
-from psycopg2 import IntegrityError
 from contextlib import contextmanager
 
+from psycopg2 import IntegrityError
+from psycopg2.extensions import connection as _connection
 
 renames_tables = {
     'genre': 'genre',
@@ -100,7 +100,8 @@ def test_data(SQLite_tatle: dict, Postgres_table: dict) -> bool:
 
     """ Исключение ключей которых нету для таблиц Postgres """
     for line in list(Postgres_table['data']):
-        Postgres_data.append(sorted({k: x for k, x in line.items() if k in keys2}))
+        Postgres_data.append(sorted({k: x
+                                     for k, x in line.items() if k in keys2}))
 
     """ Сравнение колличества записей в БД """
     if len(SQLite_tatle.get('data')) == len(Postgres_table.get('data')):
@@ -108,8 +109,8 @@ def test_data(SQLite_tatle: dict, Postgres_table: dict) -> bool:
         print(f"TEST LEN:\t{len(SQLite_tatle.get('data'))}"
               f" == {len(Postgres_table.get('data'))}\tOK")
     else:
-        print(f"TEST LEN:\t{len(SQLite_tatle.get('data'))} \
-              <> {len(Postgres_table.get('data'))}\tFAILED")
+        print(f"TEST LEN:\t{len(SQLite_tatle.get('data'))}"
+              f" <> {len(Postgres_table.get('data'))}\tFAILED")
         result.append(False)
 
     """ Сравнение записей в БД """

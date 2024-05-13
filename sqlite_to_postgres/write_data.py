@@ -1,7 +1,7 @@
-from psycopg2.extensions import connection as _connection
-from psycopg2 import IntegrityError
 from dataclasses import asdict, astuple
 
+from psycopg2 import IntegrityError
+from psycopg2.extensions import connection as _connection
 
 renames_tables = {
     'genre': 'genre',
@@ -69,7 +69,9 @@ class PostgresSaver():
                 f"({col_count})", astuple(user)).decode('utf-8')
                 for user in part.get('data'))
             query = (
-                f"INSERT INTO {self.scheme}.{renames_tables.get(part.get('table'))} ({column_names_str}) VALUES {bind_values} "
+                f"INSERT INTO "
+                f"{self.scheme}.{renames_tables.get(part.get('table'))} "
+                f"({column_names_str}) VALUES {bind_values} "
                 f" ON CONFLICT (id) DO NOTHING;"
             )
 

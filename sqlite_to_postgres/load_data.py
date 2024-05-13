@@ -2,11 +2,12 @@ import os
 import sqlite3
 
 import psycopg2
+from dotenv import load_dotenv
 from psycopg2.extensions import connection as _connection
 from psycopg2.extras import DictCursor
+
 from read_data import SQLiteExtractor, conn_context
 from write_data import PostgresSaver
-from dotenv import load_dotenv
 
 load_dotenv()
 
