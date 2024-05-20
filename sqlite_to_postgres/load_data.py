@@ -2,7 +2,7 @@ import dataclasses
 import os
 import pathlib
 import sqlite3
-from contextlib import contextmanager
+from contextlib import closing, contextmanager
 from itertools import count
 from typing import Generator, Iterable
 
@@ -92,6 +92,6 @@ if __name__ == "__main__":
 
     with (
         conn_context(db_path) as sqlite_conn,
-        psycopg2.connect(**dsl, cursor_factory=DictCursor) as pg_conn,
+        closing(psycopg2.connect(**dsl, cursor_factory=DictCursor)) as pg_conn,
     ):
         load_from_sqlite(sqlite_conn, pg_conn)

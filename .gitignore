@@ -110,3 +110,5 @@ reno.cache
 
 # Used for pycharm autocomplition only
 *.pyi
+
+logs/

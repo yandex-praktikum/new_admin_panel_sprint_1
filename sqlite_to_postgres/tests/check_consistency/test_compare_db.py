@@ -2,7 +2,7 @@ import datetime
 import os
 import pathlib
 import sqlite3
-from contextlib import contextmanager
+from contextlib import closing, contextmanager
 from typing import Generator
 
 import psycopg2
@@ -48,7 +48,7 @@ def test_rows_cnt(load_env, model):
 
     with (
         conn_context(db_path) as sqlite_conn,
-        psycopg2.connect(**dsl, cursor_factory=DictCursor) as pg_conn,
+        closing(psycopg2.connect(**dsl, cursor_factory=DictCursor)) as pg_conn,
     ):
         query = f"SELECT count(*) FROM {model._table_name};"
         sqlite_cur = sqlite_conn.cursor()
@@ -69,7 +69,7 @@ def test_rows_equality(load_env, model):
 
     with (
         conn_context(db_path) as sqlite_conn,
-        psycopg2.connect(**dsl, cursor_factory=DictCursor) as pg_conn,
+        closing(psycopg2.connect(**dsl, cursor_factory=DictCursor)) as pg_conn,
     ):
         pg_cur = pg_conn.cursor()
         sqlite_cur = sqlite_conn.cursor()
