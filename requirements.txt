@@ -1,0 +1,6 @@
+django==4.2.11
+flake8==6.1.0
+django-split-settings
+psycopg2
+python-dotenv
+django-debug-toolbar
