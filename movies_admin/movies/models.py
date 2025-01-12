@@ -29,10 +29,10 @@ class Genre(UUIDMixin, TimeStampedMixin):
 
 class Filmwork(UUIDMixin, TimeStampedMixin):
     class Type(models.TextChoices):
-        movie = ('movie', _('Фильм')) # Перевод Фильм
-        tv_show = ('tv_show', _('Шоу')) # Перевод Тв Шоу
-        soap_opera  = ('soap_opera', _('Сериал'))   # перевод Сериал
-        cartoon = ('cartoon', _('Мультфильм'))  # перевод Мультфильм
+        movie = ('movie', _('Фильм'))
+        tv_show = ('tv_show', _('Шоу')) 
+        soap_opera  = ('soap_opera', _('Сериал')) 
+        cartoon = ('cartoon', _('Мультфильм')) 
     type = models.CharField(_('type'),
         max_length=10,
         choices=Type.choices,
