@@ -137,11 +137,10 @@ class SQLiteExtractor:
         self.batch_size = batch_size
         data_class = TABLE_CLASS[table_name]
         rows = self.cursor.fetchmany(batch_size)
-        while rows:
+        while rows := self.cursor.fetchmany(batch_size):
             yield [
                 data_class(**row) for row in rows
-            ]
-            rows = self.cursor.fetchmany(batch_size)
+        ]
 
 
 def load_from_sqlite(
