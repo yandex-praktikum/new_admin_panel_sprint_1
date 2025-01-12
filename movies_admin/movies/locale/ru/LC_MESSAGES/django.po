@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-07 14:57+0000\n"
+"POT-Creation-Date: 2025-01-12 21:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,58 +20,59 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: movies/apps.py:8
+#: new_admin_panel_sprint_1-1/movies_admin/movies/apps.py:8
 msgid "movies"
 msgstr "Кинотеатр"
 
-#: movies/models.py:25
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:26
 #, fuzzy
 #| msgid "full_name"
 msgid "name"
 msgstr "Название"
 
-#: movies/models.py:27 movies/models.py:51
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:28
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:52
 msgid "description"
 msgstr "Описание"
 
-#: movies/models.py:40
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:41
 msgid "Фильм"
 msgstr "Фильм"
 
-#: movies/models.py:41
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:42
 #, fuzzy
 #| msgid "ТВ Шоу"
 msgid "Шоу"
 msgstr "ТВ Шоу"
 
-#: movies/models.py:42
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:43
 msgid "Сериал"
 msgstr "Сериал"
 
-#: movies/models.py:43
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:44
 msgid "Мультфильм"
 msgstr "Мультфильм"
 
-#: movies/models.py:44
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:45
 msgid "type"
 msgstr "Тип Кинопроизведения"
 
-#: movies/models.py:49
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:50
 msgid "title"
 msgstr "Название"
 
-#: movies/models.py:53
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:54
 msgid "Дата создания"
 msgstr ""
 
-#: movies/models.py:55
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:56
 msgid "rating"
 msgstr "Рейтинг"
 
-#: movies/models.py:78
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:79
 msgid "full_name"
 msgstr "Полное Имя Участника"
 
-#: movies/models.py:91
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:92
 msgid "role"
 msgstr "Роль"
