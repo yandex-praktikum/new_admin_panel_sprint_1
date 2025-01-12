@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 m django.contrib import admin
+=======
+from django.contrib import admin
+>>>>>>> d12b2e8d6a39619ab8c523771009f30d345f61f1
 from django.utils.translation import gettext_lazy as _
 from .models import Genre, Filmwork, GenreFilmwork, Person, PersonFilmwork
 
