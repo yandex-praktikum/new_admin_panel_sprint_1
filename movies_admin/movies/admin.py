@@ -1,10 +1,11 @@
-from django.contrib import admin
+
+m django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 from .models import Genre, Filmwork, GenreFilmwork, Person, PersonFilmwork
 
 
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
-    # Отображение полей в списке
     list_display = ('id','name')
     search_fields = ('id', 'name')
 
@@ -16,24 +17,23 @@ class GenreFilmworkInline(admin.TabularInline):
 class FilmworkAdmin(admin.ModelAdmin):
     inlines = (GenreFilmworkInline,)
     list_filter = ('title', 'type', 'rating')
-    # Поиск по полям
-    search_fields = ('id', 'title', 'description',) 
+    search_fields = ('id', 'title', 'description',)
     list_display = ('id', 'title', 'type', 'creation_date', 'rating', 'get_genres')
     list_prefetch_related = ('genres',)
 
-    def get_queryset(self, request): 
-        queryset = ( 
+    def get_queryset(self, request):
+        queryset = (
             super()
-            .get_queryset(request) 
-            .prefetch_related(*self.list_prefetch_related) 
-        ) 
-        return queryset 
-    
-    def get_genres(self, obj): 
-        genres = obj.genres.all()
-        return ', '.join([genre.name for genre in genres]) 
+            .get_queryset(request)
+            .prefetch_related(*self.list_prefetch_related)
+        )
+        return queryset
 
-    get_genres.short_description = 'Жанры фильма'
+    def get_genres(self, obj):
+        genres = obj.genres.all()
+        return ', '.join([genre.name for genre in genres])
+
+    get_genres.short_description = _('Genre Films')
 
 
 class PersonFilmworkInline(admin.TabularInline):
@@ -42,11 +42,7 @@ class PersonFilmworkInline(admin.TabularInline):
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
-    inlines = (PersonFilmworkInline,) 
-    # Отображение полей в списке
+    inlines = (PersonFilmworkInline,)
     list_display = ('id', 'full_name',)
-    # Фильтрация в списке
     list_filter = ('full_name',)
-    # Поиск по полям
     search_fields = ('id', 'full_name', 'person', 'film_work')
-

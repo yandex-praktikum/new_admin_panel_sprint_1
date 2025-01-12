@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-12 22:07+0000\n"
+"POT-Creation-Date: 2025-01-12 23:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,122 +18,123 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: movies/apps.py:8
+#: new_admin_panel_sprint_1-1/movies_admin/movies/apps.py:8
 msgid "movies"
 msgstr ""
 
-#: movies/models.py:22
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:22
 msgid "name"
 msgstr ""
 
-#: movies/models.py:23 movies/models.py:42
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:23
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:42
 msgid "description"
 msgstr ""
 
-#: movies/models.py:27
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:27
 msgid "Genre"
 msgstr ""
 
-#: movies/models.py:28
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:28
 msgid "Genres"
 msgstr ""
 
-#: movies/models.py:32
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:32
 msgid "Фильм"
 msgstr ""
 
-#: movies/models.py:33
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:33
 msgid "Шоу"
 msgstr ""
 
-#: movies/models.py:34
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:34
 msgid "Сериал"
 msgstr ""
 
-#: movies/models.py:35
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:35
 msgid "Мультфильм"
 msgstr ""
 
-#: movies/models.py:36
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:36
 msgid "type"
 msgstr ""
 
-#: movies/models.py:41
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:41
 msgid "title"
 msgstr ""
 
-#: movies/models.py:43
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:43
 msgid "Дата создания"
 msgstr ""
 
-#: movies/models.py:44
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:44
 msgid "rating"
 msgstr ""
 
-#: movies/models.py:51
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:51
 msgid "Film"
 msgstr ""
 
-#: movies/models.py:52
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:52
 msgid "Films"
 msgstr ""
 
-#: movies/models.py:71
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:71
 msgid "full_name"
 msgstr ""
 
-#: movies/models.py:75
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:75
 msgid "Person"
 msgstr ""
 
-#: movies/models.py:76
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:76
 msgid "Persons"
 msgstr ""
 
-#: movies/models.py:82
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:82
 msgid "Director"
 msgstr ""
 
-#: movies/models.py:83
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:83
 msgid "Actor"
 msgstr ""
 
-#: movies/models.py:84
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:84
 msgid "Producer"
 msgstr ""
 
-#: movies/models.py:85
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:85
 msgid "Writer"
 msgstr ""
 
-#: movies/models.py:86
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:86
 msgid "Actress"
 msgstr ""
 
-#: movies/models.py:87
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:87
 msgid "Cinematographer"
 msgstr ""
 
-#: movies/models.py:88
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:88
 msgid "Editor"
 msgstr ""
 
-#: movies/models.py:89
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:89
 msgid "Production Designer"
 msgstr ""
 
-#: movies/models.py:90
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:90
 msgid "Costumer"
 msgstr ""
 
-#: movies/models.py:91
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:91
 msgid "Sound Designer"
 msgstr ""
 
-#: movies/models.py:92
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:92
 msgid "Gaffer"
 msgstr ""
 
-#: movies/models.py:96
+#: new_admin_panel_sprint_1-1/movies_admin/movies/models.py:96
 msgid "role"
 msgstr ""
