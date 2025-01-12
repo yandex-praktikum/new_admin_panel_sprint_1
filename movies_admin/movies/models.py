@@ -101,4 +101,3 @@ class PersonFilmwork(UUIDMixin):
         indexes = [
             models.Index(fields=["film_work_id", "person_id", "role"])
         ]
-
